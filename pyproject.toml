@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "siteguard"
+version = "1.0.0"
+description = "Free website security scanner — one command to scan any website for SSL, headers, OWASP Top 10, and exposed files"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Enish Shah", email = "enish.b.shah@gmail.com"}
+]
+keywords = [
+    "security",
+    "website-scanner",
+    "ssl-check",
+    "owasp",
+    "security-headers",
+    "vulnerability-scanner",
+    "cybersecurity",
+    "pentest",
+    "small-business",
+    "website-security",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: System :: Networking :: Monitoring",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.28.0",
+    "colorama>=0.4.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-mock>=3.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/adbhutrd/siteguard"
+Documentation = "https://github.com/adbhutrd/siteguard#readme"
+Repository = "https://github.com/adbhutrd/siteguard"
+Issues = "https://github.com/adbhutrd/siteguard/issues"
+
+[project.scripts]
+siteguard = "siteguard.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["siteguard*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

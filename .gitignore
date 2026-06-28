@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Reports
+*.html
+report*.html
+!siteguard/templates/report.html
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets
+.env
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+.coverage
+htmlcov/
+.pytest_cache/
