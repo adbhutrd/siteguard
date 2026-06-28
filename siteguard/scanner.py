@@ -97,7 +97,7 @@ class SecurityScanner:
         parsed = urlparse(target)
         if parsed.netloc:
             self.domain = parsed.netloc
-            self.base_url = target.rstrip("/")
+            self.base_url = f"{parsed.scheme}://{parsed.netloc}"
         else:
             self.domain = target
             self.base_url = f"https://{target}"
